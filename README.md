@@ -1,6 +1,6 @@
-### Insure. New portfolio
+### New portfolio
 ---
-### Basic requirements
+### Some plans for that project
 ---
  - Mobile and Tablet friendly
  - React
