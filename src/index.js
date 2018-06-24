@@ -9,6 +9,7 @@ import Skills from './components/Skills'
 import Portfolio from './components/Portfolio'
 import Contacts from './components/Contacts'
 import NotFound from './components/NotFound'
+import './styles/main.sass'
 
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
