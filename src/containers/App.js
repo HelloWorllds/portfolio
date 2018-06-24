@@ -18,9 +18,7 @@ export default class App extends Component {
 					<Link to='/portfolio'><PortfolioAction /></Link>
 					<Link to='/contacts'><ContactsAction /></Link>
 				</div>
-				<div className='content'>
-					{this.props.children}
-				</div>
+				{this.props.children}
 			</div>
 		)
 	}
