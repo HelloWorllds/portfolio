@@ -4,32 +4,86 @@
 	a
 		display: inline-block
 		width: 20%
+		text-decoration: none
 
 .main-menu__item
 	display: flex
+	flex-direction: column
 	width: 100%
 	height: 100vh
+	padding: 100px 0
+	overflow: hidden
+	&:hover
+		.main-menu__item-name
+			animation: movename 0.5s
+			animation-fill-mode: forwards
 
 .main-menu__item_about
 	background-color: $about-bg
 	color: $about-color
+	.main-menu__item-image
+		background-image: url(../../images/about-img.png)
 
 .main-menu__item_exp
 	background-color: $exp-bg
 	color: $exp-color
+	.main-menu__item-image
+		background-image: url(../../images/exp-img.png)
 
 .main-menu__item_skills
 	background-color: $skills-bg
 	color: $skills-color
+	.main-menu__item-image
+		background-image: url(../../images/skills-img.png)
 
 .main-menu__item_portfolio
 	background-color: $portfolio-bg
 	color: $portfolio-color
+	.main-menu__item-image
+		background-image: url(../../images/portfolio-img.png)
 
 .main-menu__item_contacts
 	background-color: $contacts-bg
 	color: $contacts-color
+	.main-menu__item-image
+		background-image: url(../../images/contacts-img.png)
+
+.main-menu__item-name,
+.main-menu__item-image
+	width: 100%
+	height: 50%
 
 .main-menu__item-name
+	display: flex
+	justify-content: center
+	align-items: center
+	font-family: 'Polt-bold'
+	font-size: 60px
+	line-height: 60px
+	text-transform: uppercase
+	transform: rotate(-90deg)
+	animation: hidename 0.5s
+	animation-fill-mode: forwards
 
 .main-menu__item-image
+	background-position: 100% 100%
+	background-repeat: no-repeat
+	background-size: contain
+
+@keyframes movename
+	from
+		opacity: 0
+		transform: translate(0, 0) rotate(-90deg)
+	to
+		opacity: 1
+		transform: translate(0, -15px) rotate(-90deg)
+
+@keyframes hidename
+	from
+		opacity: 1
+		transform: translate(0, -15px) rotate(-90deg)
+	to
+		opacity: 0
+		transform: translate(0, 0) rotate(-90deg)
+
+
