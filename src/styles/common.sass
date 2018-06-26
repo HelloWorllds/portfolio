@@ -36,7 +36,22 @@ body
 	height: 100%
 	border: 5px solid red
 	z-index: 5
-	transition: all 0.5s
+	animation: hide 0.5s
+	//animation-delay: 0.5s
+	animation-fill-mode: forwards
 	&.active
+		animation: show 0.5s
+		//animation-delay: 0.5s
+		animation-fill-mode: forwards
+
+@keyframes show
+	from
+		bottom: -100%
+	to
 		bottom: 0
-		transition: all 0.5s
+
+@keyframes hide
+	from
+		bottom: -100%
+	to
+		bottom: 0
