@@ -12,11 +12,11 @@ export default class App extends Component {
 			<div className='main-container'>
 				<Link to='/' className='main-logo'><img src='/images/logo.png' alt='logo'/></Link>
 				<div className='main-menu'>
-					<Link to='/about'><AboutAction /></Link>
-					<Link to='/experience'><ExpAction /></Link>
-					<Link to='/skills'><SkillsAction /></Link>
-					<Link to='/portfolio'><PortfolioAction /></Link>
-					<Link to='/contacts'><ContactsAction /></Link>
+					<Link to='/about' activeClassName='active-link'><AboutAction /></Link>
+					<Link to='/experience' activeClassName='active-link'><ExpAction /></Link>
+					<Link to='/skills' activeClassName='active-link'><SkillsAction /></Link>
+					<Link to='/portfolio' activeClassName='active-link'><PortfolioAction /></Link>
+					<Link to='/contacts' activeClassName='active-link'><ContactsAction /></Link>
 				</div>
 				{this.props.children}
 			</div>
