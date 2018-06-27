@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 export default class About extends Component {
 	constructor(props) {
@@ -13,8 +14,9 @@ export default class About extends Component {
 	render() {
 		const active = this.state.active;
 		return (
-			<div className={active == 1 ? 'about active': 'about'}>
+			<div className={active == 1 ? 'about about__state_active' : 'about'}>
 				Page About
+				<Link to='/' className='about__close'>close</Link>
 			</div>
 		)
 	}

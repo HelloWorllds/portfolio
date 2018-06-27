@@ -4,10 +4,12 @@ import { Link } from 'react-router'
 export default class NotFound extends Component {
 	render() {
 		return (
-			<div className='container'>
-				<div className='row'>
-					<div className='col-md-12'>404 <br /> Page no found <br /> <Link to='/'>Home</Link></div>
-				</div>
+			<div className='error-page'>
+				404
+				<br />
+				Page not found
+				<br />
+				<Link to='/'>Home</Link>
 			</div>
 		)
 	}

@@ -1,11 +1,27 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 export default class Portfolio extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {active: 0};
+	}
+
+	componentDidMount() {
+		this.setState({active: 1});
+	}
+
 	render() {
+		const active = this.state.active;
 		return (
-			<div className='row'>
-				<div className='col-md-12'>Page /Portfolio</div>
+			<div className={active == 1 ? 'portfolio portfolio__state_active' : 'portfolio'}>
+				Page Portfolio
+				<Link to='/' className='portfolio__close'>close</Link>
 			</div>
 		)
+	}
+
+	componentWillUnmount() {
+		this.setState({active: 0});
 	}
 }
