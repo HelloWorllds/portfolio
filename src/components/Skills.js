@@ -15,8 +15,20 @@ export default class Skills extends Component {
 		const active = this.state.active;
 		return (
 			<div className={active == 1 ? 'skills skills__state_active' : 'skills'}>
-				Page Skills
-				<Link to='/' className='skills__close'>close</Link>
+				<Link to='/' className='skills__close'></Link>
+				<div className='skills__container'>
+					<div className='skills__header'>Skills</div>
+					<div className='diagram'>
+						<div className='diagram__grid'>
+							<div className='diagram__axis-y'></div>
+							<div className='diagram__axis-x'></div>
+							<div className='diagram__line diagram__line_jedi'>Jedi</div>
+							<div className='diagram__line diagram__line_ninja'>Ninja</div>
+							<div className='diagram__line diagram__line_geek'>Geek</div>
+							<div className='diagram__line diagram__line_newbie'>Newbie</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		)
 	}

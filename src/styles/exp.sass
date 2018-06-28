@@ -146,5 +146,27 @@
 	align-items: center
 
 .exp__work-header
+	margin-bottom: 30px
+	font-family: 'Polt-Regular'
+	font-size: 30px
+	line-height: 30px
 
 .exp__work-descr
+	font-family: 'Polt-Regular'
+	font-size: 18px
+	line-height: 26px
+	ul
+		column-count: 2
+		text-align: left
+	li
+		position: relative
+		padding-left: 18px
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 0
+			width: 13px
+			height: 2px
+			background-color: $e-txt-color
+			transform: translate(0, -50%)
