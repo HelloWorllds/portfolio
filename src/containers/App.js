@@ -19,6 +19,7 @@ export default class App extends Component {
 					<Link to='/contacts' activeClassName='active-link'><ContactsAction /></Link>
 				</div>
 				{this.props.children}
+				<footer className='footer'>© 2018 Vladimir Lysiuk</footer>
 			</div>
 		)
 	}

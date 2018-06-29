@@ -88,8 +88,11 @@
 
 .diagram
 	position: relative
+	display: flex
+	align-items: flex-end
 	width: calc(100% - 80px)
 	height: calc(100% - 50px)
+	padding-left: 50px
 
 .diagram__grid
 	position: absolute
@@ -117,24 +120,96 @@
 .diagram__line
 	position: absolute
 	left: 0
+	width: 100%
+	transform: translate(0, -50%)
+	&:before
+		position: absolute
+		top: 50%
+		left: 2%
+		font-family: 'Polt-Light'
+		font-size: 16px
+		line-height: 16px
+		color: $s-txt-color
+		transform: translate(-50%, -50%)
 	&:after
 		content: ''
 		position: absolute
 		top: 50%
 		left: 50px
-		width: 100%
+		width: calc(100% - 50px)
 		height: 1px
 		background-color: $s-grid-bg
 		transform: translate(0, -50%)
 
 .diagram__line_jedi
 	top: 0
+	&:before
+		content: 'Jedi'
 
 .diagram__line_ninja
-	top: 153px
+	top: 25%
+	&:before
+		content: 'Ninja'
 
 .diagram__line_geek
-	top: 306px
+	top: 50%
+	&:before
+		content: 'Geek'
 
 .diagram__line_newbie
-	bottom: 153px
+	top: 75%
+	&:before
+		content: 'Newbie'
+
+.diagram__item
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	align-items: center
+	width: calc(100% / 7 - 10px)
+	margin-left: 10px
+	margin-bottom: 2px
+	padding-bottom: 30px
+
+.diagram__item_html
+	height: 92%
+	background-color: $s-html-color
+
+.diagram__item_tea
+	height: 96%
+	background-color: $s-tea-color
+
+.diagram__item_sass
+	height: 75%
+	background-color: $s-sass-color
+
+.diagram__item_jquery
+	height: 65%
+	background-color: $s-jquery-color
+
+.diagram__item_bem
+	height: 75%
+	background-color: $s-bem-color
+
+.diagram__item_pizza
+	height: 96%
+	background-color: $s-pizza-color
+
+.diagram__item_react
+	height: 20%
+	background-color: $s-react-color
+
+.diagram__item-parcent
+	display: flex
+	align-items: center
+	margin-bottom: 10px
+	font-family: 'Polt-bold'
+	font-size: 60px
+	line-height: 60px
+	span
+		font-size: 24px
+
+.diagram__item-name
+	font-family: 'Polt-bold'
+	font-size: 16px
+	line-height: 16px
