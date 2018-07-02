@@ -1,10 +1,16 @@
 .contacts
 	position: absolute
+	display: flex
+	justify-content: center
 	bottom: -100%
 	left: 0
 	width: 100%
 	height: 100%
+	padding: 100px 0
 	background-color: $contacts-bg
+	background-image: url(../../images/page-contacts-bg.png)
+	background-position: 100% 50%
+	background-repeat: no-repeat
 	color: $c-txt-color
 	animation: hide 0.5s
 	animation-fill-mode: forwards
@@ -24,3 +30,58 @@
 		bottom: -100%
 	to
 		bottom: 0
+
+.contacts__close
+	position: absolute
+	display: block
+	top: 35px
+	left: 55px
+	width: 45px
+	height: 45px
+	cursor: pointer
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		display: block
+		top: 50%
+		left: 50%
+		width: 90%
+		height: 2px
+		background-color: $c-close-color
+		transition: all 0.3s
+	&:before
+		transform: translate(-50%, -50%) rotate(45deg)
+	&:after
+		transform: translate(-50%, -50%) rotate(-45deg)
+	&:hover
+		&:before,
+		&:after
+			background-color: $c-close-hover
+			transition: all 0.3s
+
+.contacts__container
+	display: flex
+	flex-direction: column
+	width: 1150px
+	height: auto
+	padding-top: 100px
+
+.contacts__header
+	position: relative
+	margin-bottom: 30px
+	font-family: 'Polt-bold'
+	font-size: 60px
+	line-height: 60px
+	text-align: center
+	text-transform: uppercase
+	color: $c-header-color
+	&:after
+		content: ''
+		position: absolute
+		bottom: -10px
+		left: 50%
+		width: 100px
+		height: 6px
+		background-color: $c-header-color
+		transform: translate(-50%, 0)

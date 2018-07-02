@@ -15,8 +15,10 @@ export default class Contacts extends Component {
 		const active = this.state.active;
 		return (
 			<div className={active == 1 ? 'contacts contacts__state_active' : 'contacts'}>
-				Page Contacts
-				<Link to='/' className='contacts__close'>close</Link>
+				<Link to='/' className='contacts__close'></Link>
+				<div className='contacts__container'>
+					<div className='contacts__header'>Contacts</div>
+				</div>
 			</div>
 		)
 	}
