@@ -1,66 +1,49 @@
 import React, { Component } from 'react'
+import SliderItem from './SliderItem'
 
 export default class Slider extends Component {
 	constructor(props) {
 		super(props);
-		this.onSlidePrev = this.onSlidePrev.bind(this);
-		this.onSlideNext = this.onSlideNext.bind(this);
 		this.state = {current: 0, total: 4};
+
+		this.prevSlide = this.prevSlide.bind(this);
+		this.nextSlide = this.nextSlide.bind(this);
 	}
 
-	onSlidePrev() {
-		let current = this.state.current;
-		const total = this.state.total;
+	prevSlide() {
+		const lastIndex = this.state.total - 1;
+		const { current } = this.state;
+		const resetIndex = current === 0;
+		const index = resetIndex ? lastIndex : current - 1;
 
-		if (current < total) {
-			current++;
-			this.setState({current: current});
-		} else {
-			current = total;
-			this.setState({current: current});
-		}
-		console.log('Current - ' + current);
+		this.setState({
+			current: index
+		});
 	}
 
-	onSlideNext() {
-		let current = this.state.current;
-		const total = this.state.total;
+	nextSlide() {
+		const lastIndex = this.state.total - 1;
+		const { current } = this.state;
+		const resetIndex = current === lastIndex;
+		const index = resetIndex ? 0 : current + 1;
 
-		if (current < total && current > 0 ) {
-			current--;
-			this.setState({current: current});
-		} else {
-			current = 0;
-			this.setState({current: current});
-		}
-		console.log('Current - ' + current);
+		this.setState({
+			current: index
+		});
 	}
 
 	render() {
 		return (
 			<div className='portfolio__items'>
-				<button type='button' onClick={this.onSlidePrev.bind(this)}>Prev</button>
-				<button type='button' onClick={this.onSlideNext.bind(this)}>Next</button>
-				<div className='portfolio__item portfolio__item_site1'>
-					<div className='portfolio__item-header'>Site1</div>
-					<div className='portfolio__item-descr'>Site 1 description</div>
-					<a href='/' target='_blank' className='portfolio__item-link'>Site1</a>
-				</div>
-				<div className='portfolio__item portfolio__item_site2'>
-					<div className='portfolio__item-header'>Site2</div>
-					<div className='portfolio__item-descr'>Site 2 description</div>
-					<a href='/' target='_blank' className='portfolio__item-link'>Site2</a>
-				</div>
-				<div className='portfolio__item portfolio__item_site3'>
-					<div className='portfolio__item-header'>Site3</div>
-					<div className='portfolio__item-descr'>Site 3 description</div>
-					<a href='/' target='_blank' className='portfolio__item-link'>Site3</a>
-				</div>
-				<div className='portfolio__item portfolio__item_site4'>
-					<div className='portfolio__item-header'>Site4</div>
-					<div className='portfolio__item-descr'>Site 4 description</div>
-					<a href='/' target='_blank' className='portfolio__item-link'>Site4</a>
-				</div>
+				<button type='button' onClick={ this.prevSlide }>Prev</button>
+				
+				<SliderItem url={'/'} 
+							img={'/images/' + this.state.current + '.jpg'}
+							name={'Test name-' + this.state.current} 
+							descr={'Test descr-' + this.state.current}
+				/>
+
+				<button type='button' onClick={ this.nextSlide }>Next</button>
 			</div>
 		);
 	}
