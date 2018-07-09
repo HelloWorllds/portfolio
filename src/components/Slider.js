@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
 import SliderItem from './SliderItem'
 
+var siteNames = [
+	'D.TEK Calculator',
+	'Koblevo',
+	'Latte',
+	'TVIS',
+	'KeramKIEV',
+	'Wexler',
+	'Form Service'
+];
+
 export default class Slider extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {current: 0, total: 4};
+		this.state = {current: 0, total: 7};
 
 		this.prevSlide = this.prevSlide.bind(this);
 		this.nextSlide = this.nextSlide.bind(this);
@@ -35,15 +45,14 @@ export default class Slider extends Component {
 	render() {
 		return (
 			<div className='portfolio__items'>
-				<button type='button' onClick={ this.prevSlide }>Prev</button>
+				<button type='button' className='portfolio__arrow portfolio__arrow_prev' onClick={ this.prevSlide }>Prev</button>
 				
 				<SliderItem url={'/'} 
 							img={'/images/' + this.state.current + '.jpg'}
-							name={'Test name-' + this.state.current} 
-							descr={'Test descr-' + this.state.current}
+							name={siteNames[this.state.current]}
 				/>
 
-				<button type='button' onClick={ this.nextSlide }>Next</button>
+				<button type='button' className='portfolio__arrow portfolio__arrow_next' onClick={ this.nextSlide }>Next</button>
 			</div>
 		);
 	}

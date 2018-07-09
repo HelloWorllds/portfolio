@@ -6,7 +6,6 @@
 	left: 0
 	width: 100%
 	height: 100%
-	padding: 100px 0
 	background-color: $portfolio-bg
 	background-image: url(../../images/page-portfolio-bg.png)
 	background-position: 100% 50%
@@ -60,34 +59,54 @@
 			background-color: $p-close-hover
 			transition: all 0.3s
 
-.portfolio__container
-	display: flex
-	flex-direction: column
-	width: 1150px
-	height: auto
-	padding-top: 100px
-
-.portfolio__header
+.portfolio__items
 	position: relative
-	margin-bottom: 30px
-	font-family: 'Polt-bold'
-	font-size: 60px
-	line-height: 60px
-	text-align: center
-	text-transform: uppercase
-	color: $p-header-color
-	&:after
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: 100%
+	&:before
 		content: ''
 		position: absolute
-		bottom: -10px
-		left: 50%
-		width: 100px
-		height: 6px
-		background-color: $p-header-color
-		transform: translate(-50%, 0)
+		display: block
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0, 0, 0, 0.2)
+
+.portfolio__arrow
+	position: absolute
+	top: 50%
+	width: 50px
+	height: 50px
+	background-color: transparent
+	transform: translate(0, -50%)
+	cursor: pointer
+
+	border: 1px solid red
+
+.portfolio__arrow_prev
+	left: 50px
+
+.portfolio__arrow_next
+	right: 50px
 
 .portfolio__item
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
 	width: 100%
-	height: 500px
+	height: 100%
 	background-position: 50%
 	background-size: cover
+
+.portfolio__item-header
+	position: relative
+	z-index: $position-1lvl
+
+.portfolio__item-link
+	position: relative
+	z-index: $position-1lvl

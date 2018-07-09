@@ -17,10 +17,7 @@ export default class Portfolio extends Component {
 		return (
 			<div className={active == 1 ? 'portfolio portfolio__state_active' : 'portfolio'}>
 				<Link to='/' className='portfolio__close'></Link>
-				<div className='portfolio__container'>
-					<div className='portfolio__header'>Portfolio</div>
-					<Slider />
-				</div>
+				<Slider />
 			</div>
 		)
 	}
