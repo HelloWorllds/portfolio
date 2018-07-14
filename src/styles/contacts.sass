@@ -85,3 +85,47 @@
 		height: 6px
 		background-color: $c-header-color
 		transform: translate(-50%, 0)
+
+.contacts__links
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	padding: 75px 150px
+
+.contacts__link
+	position: relative
+	display: block
+	width: 130px
+	height: 130px
+	margin: 0 75px 120px
+	background-position: 50%
+	background-repeat: no-repeat
+	background-size: contain
+	transition: all 0.3s
+	&:hover
+		transition: all 0.3s
+
+.contacts__link_linkedin
+	background-image: url(../../images/linkedin.png)
+	&:hover
+		background-image: url(../../images/linkedin-h.png)
+
+.contacts__link_github
+	background-image: url(../../images/github.png)
+	&:hover
+		background-image: url(../../images/github-h.png)
+
+.contacts__link_codepen
+	background-image: url(../../images/codepen.png)
+	&:hover
+		background-image: url(../../images/codepen-h.png)
+
+.contacts__link_e-mail
+	background-image: url(../../images/mail.png)
+	&:hover
+		background-image: url(../../images/mail-h.png)
+
+.contacts__link_resume
+	background-image: url(../../images/resume.png)
+	&:hover
+		background-image: url(../../images/resume-h.png)

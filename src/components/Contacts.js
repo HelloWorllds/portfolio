@@ -18,6 +18,13 @@ export default class Contacts extends Component {
 				<Link to='/' className='contacts__close'></Link>
 				<div className='contacts__container'>
 					<div className='contacts__header'>Contacts</div>
+					<div className='contacts__links'>
+						<a href='/' target='_blank' className='contacts__link contacts__link_linkedin'></a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_github'></a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_codepen'></a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_e-mail'></a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_resume'></a>
+					</div>
 				</div>
 			</div>
 		)
