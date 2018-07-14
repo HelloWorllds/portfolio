@@ -11,6 +11,16 @@ var siteNames = [
 	'Form Service'
 ];
 
+var siteUrls = [
+	'https://dtek-esco.com/calc',
+	'http://www.koblevo.ua/',
+	'http://lattecafe.kiev.ua/',
+	'http://new.tvis.com.ua/',
+	'http://keram.apelsun.net.ua/',
+	'http://wexlerglobal.com',
+	'http://form-services.com/'
+];
+
 export default class Slider extends Component {
 	constructor(props) {
 		super(props);
@@ -45,14 +55,14 @@ export default class Slider extends Component {
 	render() {
 		return (
 			<div className='portfolio__items'>
-				<button type='button' className='portfolio__arrow portfolio__arrow_prev' onClick={ this.prevSlide }>Prev</button>
+				<button type='button' className='portfolio__arrow portfolio__arrow_prev' onClick={ this.prevSlide }></button>
 				
-				<SliderItem url={'/'} 
+				<SliderItem url={siteUrls[this.state.current]} 
 							img={'/images/' + this.state.current + '.jpg'}
 							name={siteNames[this.state.current]}
 				/>
 
-				<button type='button' className='portfolio__arrow portfolio__arrow_next' onClick={ this.nextSlide }>Next</button>
+				<button type='button' className='portfolio__arrow portfolio__arrow_next' onClick={ this.nextSlide }></button>
 			</div>
 		);
 	}
