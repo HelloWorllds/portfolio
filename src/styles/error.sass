@@ -1,0 +1,54 @@
+.error-page
+	position: relative
+	display: flex
+	flex-direction: column
+	width: 100%
+	height: 100vh
+	padding: 100px 430px
+	background-color: $er-bg
+	background-image: url(../../images/page-error-bg.png)
+	background-position: 0% 50%
+	background-repeat: no-repeat
+	background-size: 400px 810px
+	color: $er-txt-color
+
+.error-page__text
+	position: relative
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 350px
+	height: 150px
+	border-radius: 50%
+	background-color: $er-cloud-bg
+	font-family: 'Polt-Book'
+	font-size: 26px
+	line-height: 36px
+	color: $er-bg
+	text-align: center
+	z-index: 1
+	&:after
+		content: ''
+		position: absolute
+		display: block
+		bottom: 0
+		left: 0
+		width: 0
+		height: 0
+		border: 50px solid transparent
+		border-right: 75px solid $er-cloud-bg
+		transform: translate(-35%, -15%) rotate(75deg);
+		z-index: -1
+
+.error-page__btn-wrapper
+	width: 100%
+	margin: auto
+
+.error-page__link
+	display: block
+	width: 250px
+	height: 60px
+	margin: auto
+	border: 2px solid red
+	line-height: 60px
+	text-align: center
