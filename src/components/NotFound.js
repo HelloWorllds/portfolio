@@ -10,6 +10,7 @@ export default class NotFound extends Component {
 				<div className='error-page__btn-wrapper'>
 					<Link to='/' className='error-page__link'>Go home</Link>
 				</div>
+				<div className='error-page__number'>404</div>
 				<footer className='footer'>© 2018 Vladimir Lysiuk</footer>
 			</div>
 		)
