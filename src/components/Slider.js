@@ -1,25 +1,6 @@
 import React, { Component } from 'react'
 import SliderItem from './SliderItem'
-
-var siteNames = [
-	'D.TEK Calculator',
-	'Koblevo',
-	'Latte',
-	'TVIS',
-	'KeramKIEV',
-	'Wexler',
-	'Form Service'
-];
-
-var siteUrls = [
-	'https://dtek-esco.com/calc',
-	'http://www.koblevo.ua/',
-	'http://lattecafe.kiev.ua/',
-	'http://new.tvis.com.ua/',
-	'http://keram.apelsun.net.ua/',
-	'http://wexlerglobal.com',
-	'http://form-services.com/'
-];
+import Sites from '../store/Sites'
 
 export default class Slider extends Component {
 	constructor(props) {
@@ -57,9 +38,9 @@ export default class Slider extends Component {
 			<div className='portfolio__items'>
 				<button type='button' className='portfolio__arrow portfolio__arrow_prev' onClick={ this.prevSlide }></button>
 				
-				<SliderItem url={siteUrls[this.state.current]} 
-							img={'/images/' + this.state.current + '.jpg'}
-							name={siteNames[this.state.current]}
+				<SliderItem url={Sites[this.state.current].url} 
+							img={Sites[this.state.current].image}
+							name={Sites[this.state.current].name}
 				/>
 
 				<button type='button' className='portfolio__arrow portfolio__arrow_next' onClick={ this.nextSlide }></button>
