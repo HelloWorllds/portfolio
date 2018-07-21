@@ -19,11 +19,21 @@ export default class Contacts extends Component {
 				<div className='contacts__container'>
 					<div className='contacts__header'>Contacts</div>
 					<div className='contacts__links'>
-						<a href='/' target='_blank' className='contacts__link contacts__link_linkedin'></a>
-						<a href='/' target='_blank' className='contacts__link contacts__link_github'></a>
-						<a href='/' target='_blank' className='contacts__link contacts__link_codepen'></a>
-						<a href='/' target='_blank' className='contacts__link contacts__link_e-mail'></a>
-						<a href='/' target='_blank' className='contacts__link contacts__link_resume'></a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_linkedin'>
+							<div className='contacts__tooltip'>LinkedIn</div>
+						</a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_github'>
+							<div className='contacts__tooltip'>GitHub</div>
+						</a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_codepen'>
+							<div className='contacts__tooltip'>CodePen</div>
+						</a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_e-mail'>
+							<div className='contacts__tooltip'>E-mail</div>
+						</a>
+						<a href='/' target='_blank' className='contacts__link contacts__link_resume'>
+							<div className='contacts__tooltip'>Resume</div>
+						</a>
 					</div>
 				</div>
 			</div>
