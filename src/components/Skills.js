@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 export default class Skills extends Component {
 	constructor(props) {
@@ -27,55 +28,63 @@ export default class Skills extends Component {
 							<div className='diagram__line diagram__line_geek'></div>
 							<div className='diagram__line diagram__line_newbie'></div>
 						</div>
-						<div className='diagram__item diagram__item_html'>
-							<div className='diagram__item-parcent'>
-								92
-								<span>%</span>
+						<CSSTransitionGroup 
+							transitionName='showditem'
+							transitionAppear={true}
+							transitionAppearTimeout={1100}
+							transitionEnter={false}
+							transitionLeave={false}
+						>
+							<div className='diagram__item diagram__item_html'>
+								<div className='diagram__item-parcent'>
+									92
+									<span>%</span>
+								</div>
+								<div className='diagram__item-name'>HTML/CSS</div>
 							</div>
-							<div className='diagram__item-name'>HTML/CSS</div>
-						</div>
-						<div className='diagram__item diagram__item_tea'>
-							<div className='diagram__item-parcent'>
-								96
-								<span>%</span>
+							<div className='diagram__item diagram__item_tea'>
+								<div className='diagram__item-parcent'>
+									96
+									<span>%</span>
+								</div>
+								<div className='diagram__item-name'>Tea drinking</div>
 							</div>
-							<div className='diagram__item-name'>Tea drinking</div>
-						</div>
-						<div className='diagram__item diagram__item_sass'>
-							<div className='diagram__item-parcent'>
-								75
-								<span>%</span>
+							<div className='diagram__item diagram__item_sass'>
+								<div className='diagram__item-parcent'>
+									75
+									<span>%</span>
+								</div>
+								<div className='diagram__item-name'>Sass/Less</div>
 							</div>
-							<div className='diagram__item-name'>Sass/Less</div>
-						</div>
-						<div className='diagram__item diagram__item_jquery'>
-							<div className='diagram__item-parcent'>
-								65
-								<span>%</span>
+							<div className='diagram__item diagram__item_jquery'>
+								<div className='diagram__item-parcent'>
+									65
+									<span>%</span>
+								</div>
+								<div className='diagram__item-name'>jQuery</div>
 							</div>
-							<div className='diagram__item-name'>jQuery</div>
-						</div>
-						<div className='diagram__item diagram__item_bem'>
-							<div className='diagram__item-parcent'>
-								75
-								<span>%</span>
+							<div className='diagram__item diagram__item_bem'>
+								<div className='diagram__item-parcent'>
+									75
+									<span>%</span>
+								</div>
+								<div className='diagram__item-name'>BEM</div>
 							</div>
-							<div className='diagram__item-name'>BEM</div>
-						</div>
-						<div className='diagram__item diagram__item_pizza'>
-							<div className='diagram__item-parcent'>
-								96
-								<span>%</span>
+							<div className='diagram__item diagram__item_pizza'>
+								<div className='diagram__item-parcent'>
+									96
+									<span>%</span>
+								</div>
+								<div className='diagram__item-name'>Eating pizza</div>
 							</div>
-							<div className='diagram__item-name'>Eating pizza</div>
-						</div>
-						<div className='diagram__item diagram__item_react'>
-							<div className='diagram__item-parcent'>
-								20
-								<span>%</span>
+							<div className='diagram__item diagram__item_react'>
+								<div className='diagram__item-parcent'>
+									20
+									<span>%</span>
+								</div>
+								<div className='diagram__item-name'>React.js</div>
 							</div>
-							<div className='diagram__item-name'>React.js</div>
-						</div>
+						</CSSTransitionGroup>
 					</div>
 				</div>
 			</div>

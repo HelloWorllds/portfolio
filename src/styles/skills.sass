@@ -93,6 +93,12 @@
 	width: calc(100% - 80px)
 	height: calc(100% - 50px)
 	padding-left: 50px
+	span
+		position: relative
+		display: flex
+		align-items: flex-end
+		width: 100%
+		height: 100%
 
 .diagram__grid
 	position: absolute
@@ -174,30 +180,65 @@
 .diagram__item_html
 	height: 92%
 	background-color: $s-html-color
+	&.showditem-appear
+		height: 15%
+	&.showditem-appear.showditem-appear-active
+		animation: htmlItem 1.1s ease-in-out
+		animation-fill-mode: forwards
 
 .diagram__item_tea
 	height: 96%
 	background-color: $s-tea-color
+	&.showditem-appear
+		height: 15%
+	&.showditem-appear.showditem-appear-active
+		animation: teaItem 1.1s ease-in-out
+		animation-fill-mode: forwards
 
 .diagram__item_sass
 	height: 75%
 	background-color: $s-sass-color
+	&.showditem-appear
+		height: 15%
+	&.showditem-appear.showditem-appear-active
+		animation: sassItem 1.1s ease-in-out
+		animation-fill-mode: forwards
 
 .diagram__item_jquery
 	height: 65%
 	background-color: $s-jquery-color
+	&.showditem-appear
+		height: 15%
+	&.showditem-appear.showditem-appear-active
+		animation: jqueryItem 1.1s ease-in-out
+		animation-fill-mode: forwards
 
 .diagram__item_bem
 	height: 75%
 	background-color: $s-bem-color
+	&.showditem-appear
+		height: 15%
+	&.showditem-appear.showditem-appear-active
+		animation: bemItem 1.1s ease-in-out
+		animation-fill-mode: forwards
 
 .diagram__item_pizza
 	height: 96%
 	background-color: $s-pizza-color
+	&.showditem-appear
+		height: 15%
+	&.showditem-appear.showditem-appear-active
+		animation: pizzaItem 1.1s ease-in-out
+		animation-fill-mode: forwards
 
 .diagram__item_react
 	height: 20%
 	background-color: $s-react-color
+	&.showditem-appear
+		height: 15%
+	&.showditem-appear.showditem-appear-active
+		animation: reactItem 1.1s ease-in-out
+		animation-fill-mode: forwards
 
 .diagram__item-parcent
 	display: flex
@@ -213,3 +254,60 @@
 	font-family: 'Polt-bold'
 	font-size: 16px
 	line-height: 16px
+
+@keyframes htmlItem
+	0%
+		height: 15%
+	75%
+		height: 120%
+	100%
+		height: 92%
+
+@keyframes teaItem
+	0%
+		height: 20%
+	75%
+		height: 115%
+	100%
+		height: 96%
+
+@keyframes sassItem
+	0%
+		height: 25%
+	75%
+		height: 100%
+	100%
+		height: 75%
+
+@keyframes jqueryItem
+	0%
+		height: 20%
+	75%
+		height: 90%
+	100%
+		height: 65%
+
+@keyframes bemItem
+	0%
+		height: 25%
+	75%
+		height: 95%
+	100%
+		height: 75%
+
+@keyframes pizzaItem
+	0%
+		height: 20%
+	75%
+		height: 125%
+	100%
+		height: 96%
+
+@keyframes reactItem
+	0%
+		height: 10%
+	75%
+		height: 40%
+	100%
+		height: 20%
+
