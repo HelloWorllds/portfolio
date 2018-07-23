@@ -61,10 +61,10 @@ ul
 		height: 45px
 		transform: translate(0, 0)
 	@include mobile
-		top: 5px
+		top: 0
 		left: 50%
-		width: 130px
-		height: 35px
+		width: 100px
+		height: 25px
 		transform: translate(-50%, 0)
 
 .footer
@@ -77,4 +77,8 @@ ul
 	color: $txt-color
 	transform: translate(-50%, 0)
 	z-index: $position-top
+	@include mobile
+		bottom: 5px
+		font-size: 11px
+		line-height: 11px
 

@@ -8,7 +8,19 @@
 		@include tablet
 			width: 100%
 			height: 20%
+		@include tablet-xs
+			width: 100%
+			height: 20%
+		@include mobile
+			width: 100%
+			height: 20%
 	@include tablet
+		flex-direction: column
+		height: 100%
+	@include tablet-xs
+		flex-direction: column
+		height: 100%
+	@include mobile
 		flex-direction: column
 		height: 100%
 
@@ -32,6 +44,20 @@
 		flex-direction: row
 		height: 100%
 		padding: 15px 0
+		&:hover
+			.main-menu__item-name
+				animation: none
+	@include tablet-xs
+		flex-direction: row
+		height: 100%
+		padding: 10px 0
+		&:hover
+			.main-menu__item-name
+				animation: none
+	@include mobile
+		flex-direction: row
+		height: 100%
+		padding: 10px 0
 		&:hover
 			.main-menu__item-name
 				animation: none
@@ -101,6 +127,20 @@
 		line-height: 35px
 		animation: none
 		transform: rotate(0deg)
+	@include tablet-xs
+		width: 85%
+		height: 100%
+		font-size: 35px
+		line-height: 35px
+		animation: none
+		transform: rotate(0deg)
+	@include mobile
+		width: 80%
+		height: 100%
+		font-size: 25px
+		line-height: 25px
+		animation: none
+		transform: rotate(0deg)
 
 .main-menu__item-image
 	background-position: 100% 100%
@@ -115,6 +155,12 @@
 	@include desktop-xs
 		height: 45%
 	@include tablet
+		width: 20%
+		height: 100%
+	@include tablet-xs
+		width: 15%
+		height: 100%
+	@include mobile
 		width: 20%
 		height: 100%
 
