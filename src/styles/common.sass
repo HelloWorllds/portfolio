@@ -12,12 +12,15 @@ body
 	height: 100%
 	overflow: hidden
 
+#root, 
+.main-container
+	width: 100%
+	height: 100%
+
 ul
 	margin: 0
 	padding: 0
 	list-style: none
-
-.main-container
 
 .main-logo
 	position: fixed
@@ -36,6 +39,33 @@ ul
 		&:hover
 			filter: drop-shadow(3px 3px 5px #2c3e50)
 			transition: all 0.3s
+	@include desktop-lp2
+		width: 300px
+		height: 60px
+	@include desktop-lp1
+		width: 290px
+		height: 55px
+	@include desktop-xs
+		width: 300px
+		height: 60px
+	@include tablet
+		top: 10px
+		left: 20px
+		width: 220px
+		height: 45px
+		transform: translate(0, 0)
+	@include tablet-xs
+		top: 10px
+		left: 20px
+		width: 220px
+		height: 45px
+		transform: translate(0, 0)
+	@include mobile
+		top: 5px
+		left: 50%
+		width: 130px
+		height: 35px
+		transform: translate(-50%, 0)
 
 .footer
 	position: fixed
@@ -47,3 +77,4 @@ ul
 	color: $txt-color
 	transform: translate(-50%, 0)
 	z-index: $position-top
+

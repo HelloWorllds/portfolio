@@ -1,0 +1,27 @@
+@mixin desktop-xl
+	@media (min-width: #{$desktop-xl-width})
+		@content
+
+@mixin desktop-lp2
+	@media (min-width: #{$desktop-lp2-width}) and (max-width: #{$desktop-xl-width - 1px})
+		@content
+
+@mixin desktop-lp1
+	@media (min-width: #{$desktop-lp1-width}) and (max-width: #{$desktop-lp2-width - 1px})
+		@content
+
+@mixin desktop-xs
+	@media (min-width: #{$desktop-xs-width}) and (max-width: #{$desktop-lp1-width - 1px})
+		@content
+
+@mixin tablet
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-xs-width - 1px})
+		@content
+
+@mixin tablet-xs
+	@media (min-width: #{$tablet-xs-width}) and (max-width: #{$tablet-width - 1px})
+		@content
+
+@mixin mobile
+	@media (min-width: 0) and (max-width: #{$tablet-xs-width - 1px})
+		@content
