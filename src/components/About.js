@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 
 export default class About extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {active: 0};
+
+		this.onClose = this.onClose.bind(this);
 	}
 
 	componentDidMount() {
 		this.setState({active: 1});
 	}
 
+	onClose() {
+		this.setState({active: 0});
+		setTimeout(function() {
+			browserHistory.push('/');
+		}, 300);
+	}
+
 	render() {
-		const active = this.state.active;
 		return (
-			<div className={active == 1 ? 'about about__state_active' : 'about'}>
-				<Link to='/' className='about__close'></Link>
+			<div className={this.state.active == 1 ? 'about about__state_active' : 'about'}>
+				<div className='about__close' onClick={ this.onClose }></div>
 				<div className='about__container'>
 					<h2 className='about__header-top'>Hello world!</h2>
 					<h1 className='about__header-center'>I'm Vladimir Lysiuk</h1>

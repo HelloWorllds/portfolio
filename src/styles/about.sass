@@ -13,24 +13,24 @@
 	background-repeat: no-repeat
 	background-size: 400px 810px
 	color: $a-txt-color
-	animation: hide 0.5s
+	animation: hideAbout 0.3s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
 	&__state_active
-		animation: show 0.5s
+		animation: showAbout 0.5s
 		animation-fill-mode: forwards
 
-@keyframes show
+@keyframes showAbout
 	from
 		bottom: -100%
 	to
 		bottom: 0
 
-@keyframes hide
+@keyframes hideAbout
 	from
-		bottom: -100%
-	to
 		bottom: 0
+	to
+		bottom: -100%
 
 .about__container
 	display: flex

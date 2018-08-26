@@ -49,6 +49,7 @@
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.4",
     "react-router": "^2.0.1",
+    "react-router-transition": "^1.2.1",
     "react-transition-group": "^1.2.1",
     "redux": "^3.4.0"
   }
