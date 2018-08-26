@@ -12,24 +12,24 @@
 	background-position: 100% 50%
 	background-repeat: no-repeat
 	color: $s-txt-color
-	animation: hide 0.5s
+	animation: hideSkills 0.5s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
 	&__state_active
-		animation: show 0.5s
+		animation: showSkills 0.5s
 		animation-fill-mode: forwards
 
-@keyframes show
+@keyframes showSkills
 	from
 		bottom: -100%
 	to
 		bottom: 0
 
-@keyframes hide
+@keyframes hideSkills
 	from
-		bottom: -100%
-	to
 		bottom: 0
+	to
+		bottom: -100%
 
 .skills__close
 	position: absolute

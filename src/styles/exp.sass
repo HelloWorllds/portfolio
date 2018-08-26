@@ -12,24 +12,24 @@
 	background-position: 100% 50%
 	background-repeat: no-repeat
 	color: $e-txt-color
-	animation: hide 0.5s
+	animation: hideExp 0.5s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
 	&__state_active
-		animation: show 0.5s
+		animation: showExp 0.5s
 		animation-fill-mode: forwards
 
-@keyframes show
+@keyframes showExp
 	from
 		bottom: -100%
 	to
 		bottom: 0
 
-@keyframes hide
+@keyframes hideExp
 	from
-		bottom: -100%
-	to
 		bottom: 0
+	to
+		bottom: -100%
 
 .exp__close
 	position: absolute

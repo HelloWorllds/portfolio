@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 
 export default class Exp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {active: 0}
+
+		this.onClose = this.onClose.bind(this);
 	}
 
 	componentDidMount() {
 		this.setState({active: 1});
 	}
 
+	onClose() {
+		this.setState({active: 0});
+		setTimeout(function() {
+			browserHistory.push('/');
+		}, 300);
+	}
+
 	render() {
-		const active = this.state.active;
 		return (
-			<div className={active == 1 ? 'exp exp__state_active' : 'exp'}>
-				<Link to='/' className='exp__close'></Link>
+			<div className={this.state.active == 1 ? 'exp exp__state_active' : 'exp'}>
+				<div className='exp__close' onClick={ this.onClose }></div>
 				<div className='exp__container'>
 					<div className='exp__header'>Experience</div>
 					<div className='exp__works'>

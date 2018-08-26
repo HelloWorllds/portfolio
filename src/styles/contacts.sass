@@ -12,24 +12,24 @@
 	background-position: 100% 50%
 	background-repeat: no-repeat
 	color: $c-txt-color
-	animation: hide 0.5s
+	animation: hideContacts 0.5s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
 	&__state_active
-		animation: show 0.5s
+		animation: showContacts 0.5s
 		animation-fill-mode: forwards
 
-@keyframes show
+@keyframes showContacts
 	from
 		bottom: -100%
 	to
 		bottom: 0
 
-@keyframes hide
+@keyframes hideContacts
 	from
-		bottom: -100%
-	to
 		bottom: 0
+	to
+		bottom: -100%
 
 .contacts__close
 	position: absolute

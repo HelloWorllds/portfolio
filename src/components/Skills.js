@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 export default class Skills extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {active: 0};
+
+		this.onClose = this.onClose.bind(this);
 	}
 
 	componentDidMount() {
 		this.setState({active: 1});
 	}
 
+	onClose() {
+		this.setState({active: 0});
+		setTimeout(function() {
+			browserHistory.push('/');
+		}, 300);
+	}
+
 	render() {
-		const active = this.state.active;
 		return (
-			<div className={active == 1 ? 'skills skills__state_active' : 'skills'}>
-				<Link to='/' className='skills__close'></Link>
+			<div className={this.state.active == 1 ? 'skills skills__state_active' : 'skills'}>
+				<div className='skills__close' onClick={ this.onClose }></div>
 				<div className='skills__container'>
 					<div className='skills__header'>Skills</div>
 					<div className='diagram'>

@@ -11,24 +11,24 @@
 	background-position: 100% 50%
 	background-repeat: no-repeat
 	color: $p-txt-color
-	animation: hide 0.5s
+	animation: hidePortfolio 0.5s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
 	&__state_active
-		animation: show 0.5s
+		animation: showPortfolio 0.5s
 		animation-fill-mode: forwards
 
-@keyframes show
+@keyframes showPortfolio
 	from
 		bottom: -100%
 	to
 		bottom: 0
 
-@keyframes hide
+@keyframes hidePortfolio
 	from
-		bottom: -100%
-	to
 		bottom: 0
+	to
+		bottom: -100%
 
 .portfolio__close
 	position: absolute
