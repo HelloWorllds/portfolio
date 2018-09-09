@@ -5,7 +5,7 @@ import Sites from '../store/Sites'
 export default class Slider extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {current: 0, total: 7};
+		this.state = {current: 0, total: Sites.length};
 
 		this.prevSlide = this.prevSlide.bind(this);
 		this.nextSlide = this.nextSlide.bind(this);
@@ -34,6 +34,7 @@ export default class Slider extends Component {
 	}
 
 	render() {
+		//let paginDot = 
 		return (
 			<div className='portfolio__items'>
 				<button type='button' className='portfolio__arrow portfolio__arrow_prev' onClick={ this.prevSlide }></button>
@@ -41,7 +42,12 @@ export default class Slider extends Component {
 				<SliderItem url={Sites[this.state.current].url} 
 							img={Sites[this.state.current].image}
 							name={Sites[this.state.current].name}
+							descr={Sites[this.state.current].descr}
 				/>
+
+				<ul className='portfolio__pagination'>
+					<li className='portfolio__dot'></li>
+				</ul>
 
 				<button type='button' className='portfolio__arrow portfolio__arrow_next' onClick={ this.nextSlide }></button>
 			</div>
