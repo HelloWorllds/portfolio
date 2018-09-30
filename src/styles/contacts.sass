@@ -15,6 +15,28 @@
 	animation: hideContacts 0.5s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
+	@include desktop-xl
+		background-size: 300px 520px
+	@include desktop-lp2
+		background-size: 300px 520px
+	@include desktop-lp1
+		padding: 30px 0
+		background-size: 280px 480px
+	@include desktop-xs
+		padding: 30px 0
+		background-size: 300px 520px
+		background-position: 110% 50%
+	@include tablet
+		padding: 30px 0
+		background-size: 260px 450px
+		background-position: 115% 50%
+	@include tablet-xs
+		padding: 30px 0
+		background-size: 180px 320px
+		background-position: 110% 50%
+	@include mobile
+		padding: 30px 0
+		background-image: none
 	&__state_active
 		animation: showContacts 0.5s
 		animation-fill-mode: forwards
@@ -39,6 +61,17 @@
 	width: 45px
 	height: 45px
 	cursor: pointer
+	@include tablet
+		left: auto
+		right: 55px
+	@include tablet-xs
+		left: auto
+		right: 55px
+	@include mobile
+		top: 10px
+		left: 15px
+		width: 25px
+		height: 25px
 	&:before,
 	&:after
 		content: ''
@@ -64,8 +97,20 @@
 	display: flex
 	flex-direction: column
 	width: 1150px
-	height: auto
+	ight: auto
 	padding-top: 100px
+	@include desktop-lp1
+		padding-top: 60px
+	@include tablet
+		padding-left: 30px
+		padding-right: 30px
+	@include tablet-xs
+		padding-left: 30px
+		padding-right: 30px
+	@include mobile
+		padding-top: 40px
+		padding-left: 15px
+		padding-right: 15px
 
 .contacts__header
 	position: relative
@@ -76,6 +121,27 @@
 	text-align: center
 	text-transform: uppercase
 	color: $c-header-color
+	@include desktop-xl
+		font-size: 55px
+		line-height: 55px
+	@include desktop-lp2
+		font-size: 50px
+		line-height: 50px
+	@include desktop-lp1
+		font-size: 44px
+		line-height: 44px
+	@include desktop-xs
+		font-size: 44px
+		line-height: 44px
+	@include tablet
+		font-size: 44px
+		line-height: 44px
+	@include tablet-xs
+		font-size: 36px
+		line-height: 36px
+	@include mobile
+		font-size: 28px
+		line-height: 28px
 	&:after
 		content: ''
 		position: absolute
@@ -91,6 +157,16 @@
 	flex-wrap: wrap
 	justify-content: center
 	padding: 75px 150px
+	@include desktop-lp1
+		padding: 55px 125px
+	@include desktop-xs
+		padding: 55px 125px
+	@include tablet
+		padding: 50px 100px
+	@include tablet-xs
+		padding: 50px 100px
+	@include mobile
+		padding: 20px 0px
 
 .contacts__link
 	position: relative
@@ -102,11 +178,33 @@
 	background-repeat: no-repeat
 	background-size: contain
 	transition: all 0.3s
+	@include desktop-lp1
+		width: 110px
+		height: 110px
+		margin: 0 55px 80px
+	@include desktop-xs
+		width: 110px
+		height: 110px
+		margin: 0 55px 80px
+	@include tablet
+		width: 100px
+		height: 100px
+		margin: 0 50px 70px
+	@include tablet-xs
+		width: 100px
+		height: 100px
+		margin: 0 50px 70px
+	@include mobile
+		width: 55px
+		height: 55px
+		margin: 0 30px 60px
 	&:hover
 		transition: all 0.3s
 		.contacts__tooltip
 			animation: tooltip-show 0.5s
 			animation-fill-mode: forwards
+			@include mobile
+				animation: mob-tooltip-show 0.5s
 
 .contacts__link_linkedin
 	background-image: url(../../images/linkedin.png)
@@ -144,8 +242,13 @@
 	background-color: rgba(0, 0, 0, 0.8)
 	opacity: 0
 	color: $c-txt-color
+	white-space: nowrap
 	animation: tooltip-hide 0.5s
 	animation-fill-mode: forwards
+	@include mobile
+		top: -30px
+		font-size: 12px
+		animation: mob-tooltip-hide 0.5s
 	&:after
 		content: ''
 		position: absolute
@@ -173,3 +276,18 @@
 		top: -50px
 		opacity: 0
 
+@keyframes mob-tooltip-show
+	0%
+		top: -10px
+		opacity: 0
+	100%
+		top: -30px
+		opacity: 1
+
+@keyframes mob-tooltip-hide
+	0%
+		top: -30px
+		opacity: 1
+	100%
+		top: -10px
+		opacity: 0

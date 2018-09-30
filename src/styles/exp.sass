@@ -15,6 +15,28 @@
 	animation: hideExp 0.5s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
+	@include desktop-xl
+		background-size: 300px 520px
+	@include desktop-lp2
+		background-size: 300px 520px
+	@include desktop-lp1
+		padding: 30px 0
+		background-size: 280px 480px
+	@include desktop-xs
+		padding: 30px 0
+		background-size: 300px 520px
+		background-position: 110% 50%
+	@include tablet
+		padding: 30px 0
+		background-size: 260px 450px
+		background-position: 115% 50%
+	@include tablet-xs
+		padding: 30px 0
+		background-size: 180px 320px
+		background-position: 110% 50%
+	@include mobile
+		padding: 30px 0
+		background-image: none
 	&__state_active
 		animation: showExp 0.5s
 		animation-fill-mode: forwards
@@ -39,6 +61,17 @@
 	width: 45px
 	height: 45px
 	cursor: pointer
+	@include tablet
+		left: auto
+		right: 55px
+	@include tablet-xs
+		left: auto
+		right: 55px
+	@include mobile
+		top: 10px
+		left: 15px
+		width: 25px
+		height: 25px
 	&:before,
 	&:after
 		content: ''
@@ -64,8 +97,21 @@
 	display: flex
 	flex-direction: column
 	width: 1150px
+	max-width: 100%
 	height: auto
 	padding-top: 100px
+	@include desktop-lp1
+		padding-top: 60px
+	@include tablet
+		padding-left: 30px
+		padding-right: 30px
+	@include tablet-xs
+		padding-left: 30px
+		padding-right: 30px
+	@include mobile
+		padding-top: 40px
+		padding-left: 15px
+		padding-right: 15px
 
 .exp__header
 	position: relative
@@ -76,6 +122,27 @@
 	text-align: center
 	text-transform: uppercase
 	color: $e-header-color
+	@include desktop-xl
+		font-size: 55px
+		line-height: 55px
+	@include desktop-lp2
+		font-size: 50px
+		line-height: 50px
+	@include desktop-lp1
+		font-size: 44px
+		line-height: 44px
+	@include desktop-xs
+		font-size: 44px
+		line-height: 44px
+	@include tablet
+		font-size: 44px
+		line-height: 44px
+	@include tablet-xs
+		font-size: 36px
+		line-height: 36px
+	@include mobile
+		font-size: 28px
+		line-height: 28px
 	&:after
 		content: ''
 		position: absolute
@@ -94,6 +161,14 @@
 	display: flex
 	flex-direction: column
 	margin-bottom: 50px
+	@include desktop-lp1
+		margin-bottom: 28px
+	@include tablet
+		margin-bottom: 32px
+	@include tablet-xs
+		margin-bottom: 32px
+	@include mobile
+		margin-bottom: 24px
 	&:last-child
 		margin-bottom: 0
 
@@ -103,6 +178,16 @@
 	align-items: center
 	margin-bottom: 25px
 	padding-right: 100px
+	@include desktop-lp1
+		margin-bottom: 15px
+	@include desktop-xs
+		margin-bottom: 15px
+	@include tablet-xs
+		margin-bottom: 25px
+		padding-right: 100px
+	@include mobile
+		margin-bottom: 15px
+		padding-right: 0
 
 .exp__work-number
 	position: relative
@@ -112,6 +197,31 @@
 	font-size: 60px
 	line-height: 60px
 	text-align: center
+	@include desktop-lp1
+		width: 40px
+		margin-right: 50px
+		font-size: 48px
+		line-height: 48px
+	@include desktop-xs
+		width: 40px
+		margin-right: 50px
+		font-size: 48px
+		line-height: 48px
+	@include tablet
+		width: 35px
+		margin-right: 40px
+		font-size: 44px
+		line-height: 44px
+	@include tablet-xs
+		width: 35px
+		margin-right: 40px
+		font-size: 44px
+		line-height: 44px
+	@include mobile
+		width: 15px
+		margin-right: 10px
+		font-size: 18px
+		line-height: 18px
 	&:after
 		content: ''
 		position: absolute
@@ -121,23 +231,88 @@
 		height: 70px
 		background-color: $e-txt-color
 		transform: translate(0, -50%)
+		@include desktop-lp1
+			right: -3px
+			width: 5px
+			height: 50px
+		@include desktop-xs
+			right: -3px
+			width: 5px
+			height: 50px
+		@include tablet
+			right: -5px
+			width: 5px
+			height: 40px
+		@include tablet-xs
+			right: -5px
+			width: 5px
+			height: 40px
+		@include mobile
+			right: -4px
+			width: 2px
+			height: 20px
 
 .exp__work-name
 	margin-right: 125px
 	font-family: 'Polt-bold'
 	font-size: 48px
 	line-height: 48px
+	@include desktop-lp1
+		margin-right: 185px
+		font-size: 40px
+		line-height: 40px
+	@include desktop-xs
+		margin-right: 185px
+		font-size: 40px
+		line-height: 40px
+	@include tablet
+		font-size: 36px
+		line-height: 36px
+	@include tablet-xs
+		margin-right: 50px
+		font-size: 32px
+		line-height: 32px
+	@include mobile
+		margin-right: 10px
+		font-size: 14px
+		line-height: 14px
 
 .exp__work-period
 	margin-right: 140px
 	font-family: 'Polt-Regular'
 	font-size: 24px
 	line-height: 24px
+	@include desktop-lp1
+		font-size: 20px
+		line-height: 20px
+	@include desktop-xs
+		font-size: 20px
+		line-height: 20px
+	@include tablet
+		font-size: 18px
+		line-height: 18px
+	@include tablet-xs
+		margin-right: 50px
+		font-size: 18px
+		line-height: 18px
+	@include mobile
+		margin-right: 10px
+		font-size: 11px
+		line-height: 11px
 
 .exp__work-position
 	font-family: 'Polt-bold'
 	font-size: 24px
 	line-height: 24px
+	@include tablet
+		font-size: 18px
+		line-height: 18px
+	@include tablet-xs
+		font-size: 18px
+		line-height: 18px
+	@include mobile
+		font-size: 13px
+		line-height: 13px
 
 .exp__bottom-block
 	display: flex
@@ -150,14 +325,47 @@
 	font-family: 'Polt-Regular'
 	font-size: 30px
 	line-height: 30px
+	@include desktop-lp1
+		font-size: 28px
+		line-height: 28px
+	@include desktop-xs
+		font-size: 28px
+		line-height: 28px
+	@include tablet
+		font-size: 26px
+		line-height: 26px
+	@include tablet-xs
+		font-size: 24px
+		line-height: 24px
+	@include mobile
+		margin-bottom: 15px
+		font-size: 18px
+		line-height: 18px
 
 .exp__work-descr
 	font-family: 'Polt-Regular'
 	font-size: 18px
 	line-height: 26px
+	@include desktop-lp1
+		font-size: 16px
+		line-height: 24px
+	@include desktop-xs
+		font-size: 16px
+		line-height: 24px
+	@include tablet
+		font-size: 14px
+		line-height: 20px
+	@include tablet-xs
+		font-size: 14px
+		line-height: 18px
+	@include mobile
+		font-size: 12px
+		line-height: 18px
 	ul
 		column-count: 2
 		text-align: left
+		@include mobile
+			column-count: 1
 	li
 		position: relative
 		padding-left: 18px
@@ -170,3 +378,6 @@
 			height: 2px
 			background-color: $e-txt-color
 			transform: translate(0, -50%)
+			@include mobile
+				width: 7px
+				height: 1px
