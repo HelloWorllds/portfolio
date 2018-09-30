@@ -34,7 +34,6 @@ export default class Slider extends Component {
 	}
 
 	render() {
-		//let paginDot = 
 		return (
 			<div className='portfolio__items'>
 				<button type='button' className='portfolio__arrow portfolio__arrow_prev' onClick={ this.prevSlide }></button>
@@ -44,10 +43,6 @@ export default class Slider extends Component {
 							name={Sites[this.state.current].name}
 							descr={Sites[this.state.current].descr}
 				/>
-
-				<ul className='portfolio__pagination'>
-					<li className='portfolio__dot'></li>
-				</ul>
 
 				<button type='button' className='portfolio__arrow portfolio__arrow_next' onClick={ this.nextSlide }></button>
 			</div>

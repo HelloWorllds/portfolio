@@ -28,6 +28,13 @@
 	.main-menu__item-name
 		animation: movename 0.5s
 		animation-fill-mode: forwards
+		@include tablet
+			animation: none
+		@include tablet-xs
+			animation: none
+		@include mobile
+			animation: none
+
 
 .main-menu__item
 	display: flex
