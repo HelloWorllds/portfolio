@@ -24,5 +24,6 @@ $RECYCLE.BIN/
 
 images
 node_modules
+dist
 npm-debug.log
 book_img
