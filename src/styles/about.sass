@@ -25,15 +25,36 @@
 	@include desktop-xs
 		background-size: 270px 550px
 	@include tablet
+		bottom: 0
+		left: -100%
 		background-size: 240px 500px
+		animation: hideAboutMob 0.3s
+		animation-fill-mode: forwards
 	@include tablet-xs
+		bottom: 0
+		left: -100%
 		background-size: 150px 320px
+		animation: hideAboutMob 0.3s
+		animation-fill-mode: forwards
 	@include mobile
+		bottom: 0
+		left: -100%
 		padding: 30px 0
 		background-image: none
+		animation: hideAboutMob 0.3s
+		animation-fill-mode: forwards
 	&__state_active
 		animation: showAbout 0.5s
 		animation-fill-mode: forwards
+		@include tablet
+			animation: showAboutMob 0.5s
+			animation-fill-mode: forwards
+		@include tablet-xs
+			animation: showAboutMob 0.5s
+			animation-fill-mode: forwards
+		@include mobile
+			animation: showAboutMob 0.5s
+			animation-fill-mode: forwards
 
 @keyframes showAbout
 	from
@@ -46,6 +67,18 @@
 		bottom: 0
 	to
 		bottom: -100%
+
+@keyframes showAboutMob
+	from
+		left: -100%
+	to
+		left: 0
+
+@keyframes hideAboutMob
+	from
+		left: 0
+	to
+		left: -100%
 
 .about__container
 	display: flex

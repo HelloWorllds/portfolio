@@ -15,9 +15,51 @@
 	animation: hideSkills 0.5s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
+	@include desktop-xl
+		background-size: 22%
+		background-position: 105% 50%
+	@include desktop-lp2
+		background-size: 21%
+		background-position: 105% 50%
+	@include desktop-lp1
+		background-size: 20%
+		background-position: 110% 50%
+	@include desktop-xs
+		background-size: 20%
+		background-position: 110% 50%
+	@include tablet
+		bottom: 0
+		left: -100%
+		background-size: 35%
+		background-position: 125% 50%
+		animation: hideSkillsMob 0.3s
+		animation-fill-mode: forwards
+	@include tablet-xs
+		bottom: 0
+		left: -100%
+		background-size: 35%
+		background-position: 125% 50%
+		animation: hideSkillsMob 0.3s
+		animation-fill-mode: forwards
+	@include mobile
+		bottom: 0
+		left: -100%
+		padding: 30px 0
+		background-image: none
+		animation: hideSkillsMob 0.3s
+		animation-fill-mode: forwards
 	&__state_active
 		animation: showSkills 0.5s
 		animation-fill-mode: forwards
+		@include tablet
+			animation: showSkillsMob 0.5s
+			animation-fill-mode: forwards
+		@include tablet-xs
+			animation: showSkillsMob 0.5s
+			animation-fill-mode: forwards
+		@include mobile
+			animation: showSkillsMob 0.5s
+			animation-fill-mode: forwards
 
 @keyframes showSkills
 	from
@@ -31,6 +73,18 @@
 	to
 		bottom: -100%
 
+@keyframes showSkillsMob
+	from
+		left: -100%
+	to
+		left: 0
+
+@keyframes hideSkillsMob
+	from
+		left: 0
+	to
+		left: -100%
+
 .skills__close
 	position: absolute
 	display: block
@@ -39,6 +93,17 @@
 	width: 45px
 	height: 45px
 	cursor: pointer
+	@include tablet
+		left: auto
+		right: 55px
+	@include tablet-xs
+		left: auto
+		right: 55px
+	@include mobile
+		top: 10px
+		left: 15px
+		width: 25px
+		height: 25px
 	&:before,
 	&:after
 		content: ''
@@ -64,8 +129,29 @@
 	display: flex
 	flex-direction: column
 	width: 1150px
+	max-width: 100%
 	height: auto
 	padding-top: 100px
+	@include desktop-xl
+		padding-top: 50px
+	@include desktop-lp2
+		padding-top: 50px
+	@include desktop-lp1
+		padding-top: 0
+	@include desktop-xs
+		padding-top: 50px
+	@include tablet
+		padding-top: 50px
+		padding-left: 30px
+		padding-right: 30px
+	@include tablet-xs
+		padding-top: 50px
+		padding-left: 30px
+		padding-right: 30px
+	@include mobile
+		padding-top: 40px
+		padding-left: 15px
+		padding-right: 15px
 
 .skills__header
 	position: relative
@@ -76,6 +162,27 @@
 	text-align: center
 	text-transform: uppercase
 	color: $s-header-color
+	@include desktop-xl
+		font-size: 55px
+		line-height: 55px
+	@include desktop-lp2
+		font-size: 50px
+		line-height: 50px
+	@include desktop-lp1
+		font-size: 44px
+		line-height: 44px
+	@include desktop-xs
+		font-size: 44px
+		line-height: 44px
+	@include tablet
+		font-size: 44px
+		line-height: 44px
+	@include tablet-xs
+		font-size: 36px
+		line-height: 36px
+	@include mobile
+		font-size: 28px
+		line-height: 28px
 	&:after
 		content: ''
 		position: absolute
@@ -93,6 +200,12 @@
 	width: calc(100% - 80px)
 	height: calc(100% - 50px)
 	padding-left: 50px
+	@include tablet-xs
+		height: calc(100% - 150px)
+	@include mobile
+		width: calc(100% - 15px)
+		height: calc(100% - 150px)
+		padding-left: 30px
 	span
 		position: relative
 		display: flex
@@ -114,14 +227,21 @@
 	bottom: 0
 	left: 50px
 	background-color: $s-grid-bg
+	@include mobile
+		left: 30px
 
 .diagram__axis-y
 	width: 2px
 	height: 100%
+	@include mobile
+		width: 1px
 
 .diagram__axis-x
 	width: calc(100% - 50px)
 	height: 2px
+	@include mobile
+		width: calc(100% - 25px)
+		height: 1px
 
 .diagram__line
 	position: absolute
@@ -137,6 +257,10 @@
 		line-height: 16px
 		color: $s-txt-color
 		transform: translate(-50%, -50%)
+		@include mobile
+			left: 3%
+			font-size: 11px
+			line-height: 11px
 	&:after
 		content: ''
 		position: absolute
@@ -146,6 +270,9 @@
 		height: 1px
 		background-color: $s-grid-bg
 		transform: translate(0, -50%)
+		@include mobile
+			left: 30px
+			width: calc(100% - 25px)
 
 .diagram__line_jedi
 	top: 0
@@ -176,6 +303,28 @@
 	margin-left: 10px
 	margin-bottom: 2px
 	padding-bottom: 30px
+	@include desktop-lp1
+		width: calc(100% / 7 - 15px)
+		margin-left: 15px
+		padding-bottom: 15px
+	@include desktop-xs
+		width: calc(100% / 7 - 15px)
+		margin-left: 15px
+		padding-bottom: 15px
+	@include tablet
+		width: calc(100% / 7 - 15px)
+		margin-left: 15px
+		padding-bottom: 15px
+	@include tablet-xs
+		width: calc(100% / 7 - 7px)
+		margin-left: 7px
+		padding-bottom: 15px
+	@include mobile
+		flex-direction: column-reverse
+		justify-content: flex-start
+		width: calc(100% / 7 - 3px)
+		margin-left: 3px
+		padding-bottom: 10px
 
 .diagram__item_html
 	height: 92%
@@ -247,13 +396,58 @@
 	font-family: 'Polt-bold'
 	font-size: 60px
 	line-height: 60px
+	@include desktop-lp1
+		font-size: 45px
+		line-height: 45px
+	@include desktop-xs
+		font-size: 45px
+		line-height: 45px
+	@include tablet
+		font-size: 45px
+		line-height: 45px
+	@include tablet-xs
+		font-size: 36px
+		line-height: 36px
+	@include mobile
+		margin-bottom: 0
+		font-size: 16px
+		line-height: 16px
 	span
 		font-size: 24px
+		@include desktop-lp1
+			font-size: 22px
+		@include desktop-xs
+			font-size: 22px
+		@include tablet
+			font-size: 22px
+		@include tablet-xs
+			font-size: 18px
+		@include mobile
+			font-size: 10px
 
 .diagram__item-name
 	font-family: 'Polt-bold'
 	font-size: 16px
 	line-height: 16px
+	@include desktop-lp1
+		font-size: 14px
+		line-height: 14px
+	@include desktop-xs
+		font-size: 14px
+		line-height: 14px
+	@include tablet
+		font-size: 14px
+		line-height: 14px
+	@include tablet-xs
+		font-family: 'Polt-Regular'
+		font-size: 12px
+		line-height: 12px
+	@include mobile
+		font-family: 'Polt-bold'
+		font-size: 12px
+		line-height: 12px
+		white-space: nowrap
+		transform: rotate(-90deg) translateX(35px)
 
 @keyframes htmlItem
 	0%

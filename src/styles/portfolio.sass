@@ -18,9 +18,34 @@
 	animation: hidePortfolio 0.5s
 	animation-fill-mode: forwards
 	z-index: $position-2lvl
+	@include tablet
+		bottom: 0
+		left: -100%
+		animation: hidePortfolioMob 0.3s
+		animation-fill-mode: forwards
+	@include tablet-xs
+		bottom: 0
+		left: -100%
+		animation: hidePortfolioMob 0.3s
+		animation-fill-mode: forwards
+	@include mobile
+		bottom: 0
+		left: -100%
+		padding: 0
+		animation: hidePortfolioMob 0.3s
+		animation-fill-mode: forwards
 	&__state_active
 		animation: showPortfolio 0.5s
 		animation-fill-mode: forwards
+		@include tablet
+			animation: showPortfolioMob 0.5s
+			animation-fill-mode: forwards
+		@include tablet-xs
+			animation: showPortfolioMob 0.5s
+			animation-fill-mode: forwards
+		@include mobile
+			animation: showPortfolioMob 0.5s
+			animation-fill-mode: forwards
 
 @keyframes showPortfolio
 	from
@@ -34,6 +59,18 @@
 	to
 		bottom: -100%
 
+@keyframes showPortfolioMob
+	from
+		left: -100%
+	to
+		left: 0
+
+@keyframes hidePortfolioMob
+	from
+		left: 0
+	to
+		left: -100%
+
 .portfolio__close
 	position: absolute
 	display: block
@@ -43,6 +80,17 @@
 	height: 45px
 	cursor: pointer
 	z-index: $position-top
+	@include tablet
+		left: auto
+		right: 55px
+	@include tablet-xs
+		left: auto
+		right: 55px
+	@include mobile
+		top: 10px
+		left: 15px
+		width: 25px
+		height: 25px
 	&:before,
 	&:after
 		content: ''
@@ -75,6 +123,20 @@
 	background-position: 0 50%
 	background-repeat: no-repeat
 	background-size: contain
+	z-index: $position-1lvl
+	@include desktop-lp2
+		background-size: 65%
+	@include desktop-lp1
+		background-size: 65%
+	@include desktop-xs
+		background-size: 65%
+	@include tablet
+		background-size: 65%
+	@include tablet-xs
+		background-size: 70%
+		background-position: -5% 50%
+	@include mobile
+		background-image: none
 	&:before
 		content: ''
 		position: absolute
@@ -86,6 +148,31 @@
 		border-radius: 50%
 		background-color: rgba(255, 255, 255, .5)
 		transform: translate(0, -50%)
+		@include desktop-xl
+			width: 550px
+			height: 550px
+		@include desktop-lp2
+			left: 250px
+			width: 500px
+			height: 500px
+		@include desktop-lp1
+			left: 220px
+			width: 450px
+			height: 450px
+		@include desktop-xs
+			left: 220px
+			width: 450px
+			height: 450px
+		@include tablet
+			left: 130px
+			width: 350px
+			height: 350px
+		@include tablet-xs
+			left: 90px
+			width: 300px
+			height: 300px
+		@include mobile
+			display: none
 
 .portfolio__arrow
 	position: absolute
@@ -98,6 +185,10 @@
 	transform: translate(0, -50%)
 	cursor: pointer
 	transition: all 0.3s
+	z-index: $position-top
+	@include mobile
+		width: 30px
+		height: 30px
 	&:before
 		content: ''
 		position: absolute
@@ -115,11 +206,23 @@
 
 .portfolio__arrow_prev
 	left: -50px
+	@include tablet
+		left: -75px
+	@include tablet-xs
+		left: -90px
+	@include mobile
+		left: 5px
 	&:before
 		transform: translate(-25%, -50%) rotate(135deg)
 
 .portfolio__arrow_next
 	right: 50px
+	@include tablet
+		right: 25px
+	@include tablet-xs
+		right: 10px
+	@include mobile
+		right: 5px
 	&:before
 		transform: translate(-75%, -50%) rotate(-45deg)
 
@@ -130,8 +233,23 @@
 	align-items: center
 	width: 100%
 	height: auto
-	padding-right: 300px
+	padding-right: 11%
 	transition: all 0.5s
+	@include desktop-lp2
+		padding-right: 100px
+	@include desktop-lp1
+		padding-right: 100px
+	@include desktop-xs
+		padding-right: 100px
+	@include tablet
+		padding-right: 70px
+	@include tablet-xs
+		padding-right: 70px
+	@include mobile
+		flex-direction: column
+		justify-content: center
+		height: 100%
+		padding-right: 0
 
 .portfolio__item-img
 	position: absolute
@@ -144,12 +262,60 @@
 	background-size: cover
 	transform: translate(0, -50%)
 	transition: all 0.5s
+	@include desktop-xl
+		width: 500px
+		height: 500px
+	@include desktop-lp2
+		left: 275px
+		width: 450px
+		height: 450px
+	@include desktop-lp1
+		left: 245px
+		width: 400px
+		height: 400px
+	@include desktop-xs
+		left: 245px
+		width: 400px
+		height: 400px
+	@include tablet
+		left: 145px
+		width: 320px
+		height: 320px
+	@include tablet-xs
+		left: 105px
+		width: 270px
+		height: 270px
+	@include mobile
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: 0
+		transform: translate(0, 0)
+		&:after
+			content: ''
+			position: absolute
+			display: block
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(#000, .6)
 
 .portfolio__item-container
 	position: relative
 	display: flex
 	flex-direction: column
 	width: 320px
+	@include desktop-xs
+		width: 300px
+	@include tablet
+		width: 240px
+	@include tablet-xs
+		width: 180px
+	@include mobile
+		align-items: center
+		width: 100%
 
 .portfolio__item-name
 	position: relative
@@ -161,6 +327,22 @@
 	text-align: center
 	color: $p-title-color
 	white-space: nowrap
+	@include desktop-xs
+		margin-bottom: 40px
+		font-size: 60px
+		line-height: 60px
+	@include tablet
+		margin-bottom: 30px
+		font-size: 48px
+		line-height: 48px
+	@include tablet-xs
+		margin-bottom: 50px
+		font-size: 36px
+		line-height: 36px
+	@include mobile
+		margin-bottom: 30px
+		font-size: 26px
+		line-height: 26px
 	&:before
 		content: ''
 		position: absolute
@@ -171,6 +353,22 @@
 		height: 7px
 		background-color: $p-title-color
 		transform: translate(-50%, 0)
+		@include desktop-xs
+			bottom: -13px
+			width: 90px
+			height: 5px
+		@include tablet
+			bottom: -10px
+			width: 75px
+			height: 3px
+		@include tablet-xs
+			bottom: -10px
+			width: 75px
+			height: 3px
+		@include mobile
+			bottom: -7px
+			width: 55px
+			height: 2px
 
 .portfolio__item-link
 	position: relative
@@ -185,6 +383,26 @@
 	text-transform: lowercase
 	transition: all 0.3s
 	z-index: $position-1lvl
+	@include desktop-xs
+		margin-bottom: 25px
+		font-size: 22px
+		line-height: 22px
+	@include tablet
+		margin-bottom: 20px
+		font-size: 18px
+		line-height: 18px
+		text-decoration: underline
+	@include tablet-xs
+		margin-bottom: 20px
+		font-size: 18px
+		line-height: 18px
+		text-decoration: underline
+	@include mobile
+		margin-bottom: 20px
+		font-size: 16px
+		line-height: 16px
+		text-align: center
+		text-decoration: underline
 	&:after
 		content: ''
 		position: absolute
@@ -196,6 +414,15 @@
 		background-color: $p-link-color
 		transform: translate(-50%, 0)
 		transition: all 0.3s
+		@include desktop-xs
+			bottom: -10px
+			height: 2px
+		@include tablet
+			display: none
+		@include tablet-xs
+			display: none
+		@include mobile
+			display: none
 	&:hover, &:active, &:visited, &:focus
 		color: $p-link-color
 		text-decoration: none
@@ -209,6 +436,13 @@
 	font-size: 16px
 	line-height: 20px
 	color: $p-text-color
+	@include tablet
+		font-size: 14px
+		line-height: 18px
+	@include tablet-xs
+		display: none
+	@include mobile
+		display: none
 
 .showlink-enter
 	top: -10px
